@@ -127,9 +127,11 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
 HTMLActuator.prototype.message = function (won) {
   var type    = won ? "game-won" : "game-over";
   var message = won ? "Level completed!" : "Level failed!";
+  var sfx     = won ? new Audio("win.mp3") : new Audio("lose.mp3");
 
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
+  sfx.play();
 };
 
 HTMLActuator.prototype.clearMessage = function () {
