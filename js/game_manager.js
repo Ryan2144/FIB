@@ -196,8 +196,6 @@ GameManager.prototype.move = function (direction) {
 
   if (moved) {
     this.addRandomTile();
-    var moveSfx = new Audio("Move.wav")
-    moveSfx.play();
 
     if (!this.movesAvailable()) {
       this.over = true; // Game over!
